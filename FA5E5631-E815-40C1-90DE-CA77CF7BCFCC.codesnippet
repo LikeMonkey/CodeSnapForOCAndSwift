@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>KlazyImageView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> lazy var &lt;#code#&gt;: UIImageView = {
+        let ImageView  = UIImageView(frame: CGRect(x: &lt;#code#&gt;, y: &lt;#code#&gt;, width: &lt;#code#&gt;, height: &lt;#code#&gt;))
+        ImageView.image = UIImage(named: "")
+        ImageView.layer.cornerRadius = 10
+        ImageView.layer.masksToBounds = true
+        ImageVIew.layer.borderColor = UIColor.black.cgColor
+        ImageView.layer.borderWidth = 10
+        return ImageView
+    }()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FA5E5631-E815-40C1-90DE-CA77CF7BCFCC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>KlazyImageView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

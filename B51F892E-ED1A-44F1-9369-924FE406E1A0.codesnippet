@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>XScrollView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (UIScrollView *)myScrollView {
+    if (!_myScrollView) {
+        _myScrollView = [[UIScrollView alloc]init];
+        _myScrollView.backgroundColor = [UIColor clearColor];
+        _myScrollView.showsVerticalScrollIndicator = NO;
+        _myScrollView.showsHorizontalScrollIndicator = NO;
+        _myScrollView.bounces = YES;
+        _myScrollView.scrollEnabled = YES;
+        _myScrollView.delegate = self;
+        /** 拖动键盘消失 */
+        _myScrollView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+        _myScrollView.contentSize = CGSizeMake(0, MAINScreenHeight - CGRectGetMaxY(self.navView.frame));
+    }
+    return _myScrollView;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B51F892E-ED1A-44F1-9369-924FE406E1A0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>XScrollView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

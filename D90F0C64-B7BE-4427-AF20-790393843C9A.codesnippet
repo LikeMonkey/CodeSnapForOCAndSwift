@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>XTimeChangeInterval</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//时间转时间戳
++(NSString *)timeChouForDate:(NSString *)begingTime
+{
+    
+    if (begingTime ==nil) {
+        return   @"";
+    }
+    long timeChou =  [begingTime integerValue]/1000;
+    
+    NSDate *detaildate=[NSDate dateWithTimeIntervalSince1970:timeChou];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //设定时间格式,这里可以设置成自己需要的格式
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"] ];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    NSString *currentDateStr = [dateFormatter stringFromDate: detaildate];
+    NSString *str = [NSString stringWithFormat:@"%@",currentDateStr];
+    return str;
+}
+//时间戳转时间
++(NSString *)returnDateStringWithIntervalStr:(NSInteger)intervalStr {
+    
+    //是服务器返回的13位时间戳
+    NSString *timeStampString  = [NSString stringWithFormat:@"%ld",intervalStr];
+    
+    // iOS 生成的时间戳是10位
+    NSTimeInterval interval    =[timeStampString doubleValue] / 1000.0;
+    NSDate *date               = [NSDate dateWithTimeIntervalSince1970:interval];
+    //yyyy-MM-dd HH:mm:ss
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"HH:mm"];
+    NSString *dateString       = [formatter stringFromDate: date];
+    return dateString;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D90F0C64-B7BE-4427-AF20-790393843C9A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>XTimeChangeInterval</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

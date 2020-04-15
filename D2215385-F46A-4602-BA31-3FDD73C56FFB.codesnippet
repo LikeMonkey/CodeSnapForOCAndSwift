@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>kImalertView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+class texvAlertView: UIView,RVAlertAble {
+
+    var viewShowType: ShowType  = ShowType.bottom
+    var viewHeight: CGFloat = 400
+    lazy var backView: UIView = UIView()
+    
+    lazy var cancelButton: UIButton = {
+    let cancel = UIButton()
+    cancel.setTitle("Close", for: UIControlState.normal)
+    cancel.setTitleColor(.orange, for: UIControlState.normal)
+    cancel.addTarget(self, action: #selector(dissMiss), for: UIControlEvents.touchUpInside)
+    return cancel
+        }()
+    @objc func dissMiss(){
+          self.dismiss()
+      }
+   
+    class func CreatAleat(titleStr:String,image:String) -&gt;(texvAlertView){
+        let showView = texvAlertView()
+    
+        return showView
+    }
+  
+    func configSubviews() {
+           backgroundColor = .white
+           layer.cornerRadius = 7
+           layer.masksToBounds = true
+           self.initializeView()
+       }
+       
+    private func   initializeView(){
+      
+        self.addSubview(cancelButton)
+        
+        self.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview().offset(viewHeight)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(viewHeight)
+        }
+       
+        cancelButton.snp.makeConstraints { (make) in
+           
+            make.top.equalToSuperview().offset(10)
+            make.size.equalTo(CGSize(width: 100, height: 50))
+            
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
+            make.bottom.equalToSuperview().offset(-10)
+        }
+        
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D2215385-F46A-4602-BA31-3FDD73C56FFB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>kImalertView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

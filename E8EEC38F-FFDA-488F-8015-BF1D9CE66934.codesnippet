@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>XALineLabel</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>  //设置文字两端对齐
+    NSMutableAttributedString * attributedString1 = [[NSMutableAttributedString alloc] initWithString:&lt;#expression#&gt;];
+    NSMutableParagraphStyle * paragraphStyle1 = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle1.alignment=NSTextAlignmentJustified;
+    paragraphStyle1.lineSpacing = px_scale(8);
+    NSDictionary * dic =@{
+                          NSParagraphStyleAttributeName:paragraphStyle1,
+                          NSUnderlineStyleAttributeName:[NSNumber numberWithInteger:NSUnderlineStyleNone],
+                          };
+    [attributedString1 setAttributes:dic range:NSMakeRange(0, attributedString1.length)];
+    &lt;#expression#&gt;.attributedText = attributedString1;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E8EEC38F-FFDA-488F-8015-BF1D9CE66934</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>XALineLabel</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>XALineLabel</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

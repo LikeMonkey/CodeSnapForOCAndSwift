@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>XsetnavTitle</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> UILabel * label = [[UILabel alloc]init];
+       [label setFont:[UIFont boldSystemFontOfSize:22]];
+       label.text = @"品牌视界";
+       NSString *colorString =GetColorStr(@"world_brand", @"WorldBranf_nav_title_color")
+         [label setTextColor:[UIColor colorWithHexString:colorString]];
+        self.navigationItem.titleView = label;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D33E830B-EDA8-40BD-B1F8-E000C6865A4A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>XsetnavTitle</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

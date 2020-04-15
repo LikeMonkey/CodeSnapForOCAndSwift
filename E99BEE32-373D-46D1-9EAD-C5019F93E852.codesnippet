@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>setAlertFromkeyBoard</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//注册键盘监听
+-(void)registNotification
+{
+	[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+-(void)removeNotification
+{
+	[[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+	[[NSNotificationCenter defaultCenter]removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+#pragma mark - Notification Method
+-(void)keyBoardWillShow:(NSNotification *)noti
+{
+	NSDictionary *useInfo = [noti userInfo];
+	CGFloat duration =  [useInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+	NSValue * value = [useInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+	CGFloat _bottomH = CGRectGetHeight(value.CGRectValue) + 10;
+	CGFloat bgCenterY =  MAINScreenHeight/2.0;
+	CGFloat bgHeight = CGRectGetHeight(self.bgView.bounds);
+	CGFloat bottomY = bgCenterY + bgHeight/2.0;
+	CGFloat change = (MAINScreenHeight - bottomY) - _bottomH;
+
+	[UIView animateWithDuration:duration animations:^{
+		[self.bgView mas_updateConstraints:^(MASConstraintMaker *make) {
+			make.centerY.mas_equalTo(change);
+		}];
+		[self layoutIfNeeded];
+	}];
+
+}
+-(void)keyBoardWillHide:(NSNotification *)noti
+{
+	NSDictionary *useInfo = [noti userInfo];
+	CGFloat duration =  [useInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+	[UIView animateWithDuration:duration animations:^{
+		[self.bgView mas_updateConstraints:^(MASConstraintMaker *make) {
+			make.centerY.mas_equalTo(0);
+		}];
+		[self layoutIfNeeded];
+	}];
+
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E99BEE32-373D-46D1-9EAD-C5019F93E852</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>XsetAlertFromkeyBoard</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>XgetCachSize</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (CGFloat)getCachSize {
+
+    NSUInteger imageCacheSize = [[SDImageCache sharedImageCache] getSize];
+    //获取自定义缓存大小
+    //用枚举器遍历 一个文件夹的内容
+    //1.获取 文件夹枚举器
+    NSString *myCachePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"];
+    NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:myCachePath];
+    __block NSUInteger count = 0;
+    //2.遍历
+    for (NSString *fileName in enumerator) {
+        NSString *path = [myCachePath stringByAppendingPathComponent:fileName];
+        NSDictionary *fileDict = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];
+        count += fileDict.fileSize;//自定义所有缓存大小
+    }
+    // 得到是字节  转化为M
+    CGFloat totalSize = ((CGFloat)imageCacheSize+count)/1024/1024;
+    return totalSize;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>ADAED3B6-CA88-4EF9-AFEE-94FACAC7E199</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>XgetCachSize</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

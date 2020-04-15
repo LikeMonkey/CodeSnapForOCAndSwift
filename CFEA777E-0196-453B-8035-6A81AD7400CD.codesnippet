@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>XSaveOBJ</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (id)initWithCoder:(NSCoder *)decoder
+{
+    if (self = [super init]) {
+        unsigned int count = 0;
+        Ivar *ivar = class_copyIvarList([Account class], &amp;count);
+        for (NSInteger index = 0; index&lt;count; index++) {
+            Ivar iva = ivar[index];
+            const char *name = ivar_getName(iva);
+            NSString *strName = [NSString stringWithUTF8String:name];
+            id value = [decoder decodeObjectForKey:strName];
+            [self setValue:value forKey:strName];
+        }
+        free(ivar);
+    }
+    return self;
+}
+
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    unsigned int count;
+    Ivar *ivar = class_copyIvarList([Account class], &amp;count);
+    for (NSInteger index = 0; index &lt;count; index++) {
+        Ivar iv = ivar[index];
+        const char *name = ivar_getName(iv);
+        NSString *strName = [NSString stringWithUTF8String:name];
+        id value = [self valueForKey:strName];
+        [encoder encodeObject:value forKey:strName];
+    }
+    free(ivar);
+}
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CFEA777E-0196-453B-8035-6A81AD7400CD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>XSaveOBJ</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

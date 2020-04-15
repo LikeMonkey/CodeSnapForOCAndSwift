@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>XCreatCellBlackCicrle</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> self.contentView.layer.cornerRadius = 2.0f;
+        self.contentView.layer.borderWidth = 1.0f;
+        self.contentView.layer.borderColor = [UIColor clearColor].CGColor;
+        self.contentView.layer.masksToBounds = YES;
+        self.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+        self.layer.shadowOffset = CGSizeMake(0, 2.0f);
+        self.layer.shadowRadius = 2.0f;
+        self.layer.shadowOpacity = 1.0f;
+        self.layer.masksToBounds = NO;
+        self.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:self.contentView.layer.cornerRadius].CGPath;</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C53537AE-F867-4553-A255-1A60750E4CD3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>XCreatCellBlackCicrle</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

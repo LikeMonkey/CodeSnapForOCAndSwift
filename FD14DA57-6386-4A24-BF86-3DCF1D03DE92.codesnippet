@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>XCellBecomeFirsetRespon</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//输入部分执行第一响应
+-(void)inputCellBecomfirstResponse:(NSInteger)indexRow andSection:(NSInteger)section isAnimation:(BOOL)isAnimation
+{
+	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:indexRow inSection:section];
+	[self.myTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:isAnimation];
+	UITableViewCell *cell = [self.myTableView cellForRowAtIndexPath:indexPath];
+	[cell becomeFirstResponder];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FD14DA57-6386-4A24-BF86-3DCF1D03DE92</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>XCellBecomeFirsetRespon</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

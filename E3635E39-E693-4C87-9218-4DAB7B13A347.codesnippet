@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>XShowLoginIn</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>-(void)showLogin {
+	UIViewController *loginVc =[[NSClassFromString(@"LoginViewController") alloc]init];
+	if (loginVc) {
+		UIWindow *window = [[UIApplication sharedApplication].delegate window];
+		UINavigationController *nav = [[NSClassFromString(@"VoteNavigationController") alloc]initWithRootViewController:loginVc];
+		[window.rootViewController presentViewController:nav animated:YES completion:nil];
+	}
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E3635E39-E693-4C87-9218-4DAB7B13A347</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>XShowLoginIn</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

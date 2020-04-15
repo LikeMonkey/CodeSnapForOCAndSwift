@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>XtableView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>
+-(UITableView *)tableView {
+
+if(!&lt;#tableview#&gt;) {
+
+&lt;#tableview#&gt; = [[UITableView alloc]initWithFrame:&lt;#tableview#&gt; style:UITableViewStylePlain];
+
+&lt;#tableview#&gt;.delegate =self;
+
+&lt;#tableview#&gt;.dataSource =self;
+
+[&lt;#tableview#&gt; registerClass:&lt;#(nullable Class)#&gt; forCellReuseIdentifier:NSStringFromClass([&lt;#classCell#&gt; class]) ]
+}
+
+return&lt;#tableview#&gt;;
+
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C6FAAF63-B0F4-4DFE-BC57-51CBFD874287</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>XtableView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

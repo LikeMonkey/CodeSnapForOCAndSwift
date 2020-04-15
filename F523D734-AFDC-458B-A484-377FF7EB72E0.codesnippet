@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>XAppendAttributerString</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSString *str0 = @"&lt;#expression#&gt;";
+		NSString *str1 = @"《&lt;#expression#&gt;";
+		NSString *str = [NSString stringWithFormat:@"%@%@",str0,str1];
+        NSMutableAttributedString *abs = [[NSMutableAttributedString alloc] initWithString:str];
+        [abs addAttribute:NSForegroundColorAttributeName value:[UIColor &lt;#expression#&gt;] range:NSMakeRange(0,str0.length)];
+        [abs addAttribute:NSForegroundColorAttributeName value:[UIColor &lt;#expression#&gt;] range:NSMakeRange(str0.length,str1.length)];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F523D734-AFDC-458B-A484-377FF7EB72E0</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>XAppendAttributerString</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
